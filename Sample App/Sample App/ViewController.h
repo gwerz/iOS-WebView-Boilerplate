@@ -8,14 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-<UIWebViewDelegate> {
-    IBOutlet UIWebView *webView;
-    IBOutlet UIActivityIndicatorView *spinner;
-}
-
-@property (nonatomic, retain) UIWebView * webView;
-@property (nonatomic, retain) UIActivityIndicatorView * spinner;
+@interface ViewController : UIViewController <UIWebViewDelegate>
 
 @end

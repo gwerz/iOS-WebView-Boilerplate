@@ -9,7 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property (nonatomic, retain) IBOutlet UIWebView * webView;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView * spinner;
 @end
 
 @implementation ViewController
@@ -27,8 +28,9 @@
     NSURL *Url = [NSURL fileURLWithPath:htmlPath];
     
     [[self.webView scrollView] setBounces: NO];
-    
     [self.webView loadHTMLString:htmlString baseURL:Url];
+    
+    [spinner startAnimating];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -38,11 +40,8 @@
     [self.webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitUserModify='none';"];
     [self.webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitHighlight='none';"];
     
-    if ([self iOS5OrHigher]) {
-        self.webView.scrollView.contentInset = UIEdgeInsetsMake(20.0,0.0,44.0,0.0);
-    } else {
-        UIScrollView *scrollview = (UIScrollView *)[self.webView.subviews objectAtIndex:0];
-        scrollview.contentInset = UIEdgeInsetsMake(20.0,0.0,44.0,0.0);
+    if ([self iOS7OrHigher]) {
+        self.webView.scrollView.contentInset = UIEdgeInsetsMake(20,0,0,0);
     }
     
     [spinner stopAnimating];
@@ -66,13 +65,9 @@
     }
 }
 
-- (BOOL)iOS5OrHigher {
-    NSString *iOSversion = [[UIDevice currentDevice] systemVersion];
-    if ([iOSversion compare:@"5.0" options:NSNumericSearch] != NSOrderedAscending) {
-        return YES;
-    } else {
-        return NO;
-    }
+- (BOOL)iOS7OrHigher {
+    float iOSversion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    return iOSversion>=7;
 }
 
 @end
