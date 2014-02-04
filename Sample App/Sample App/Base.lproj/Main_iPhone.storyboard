@@ -30,6 +30,9 @@
                             <constraint firstItem="Mgp-Pg-ZdX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="tDZ-X0-Lg3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="Mgp-Pg-ZdX" id="WxO-My-QRA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

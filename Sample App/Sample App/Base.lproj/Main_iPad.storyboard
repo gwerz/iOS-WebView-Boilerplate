@@ -30,6 +30,9 @@
                             <constraint firstAttribute="bottom" secondItem="AuX-qq-eo6" secondAttribute="bottom" id="jK1-3f-TbX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="AuX-qq-eo6" id="cbh-g4-Eut"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
