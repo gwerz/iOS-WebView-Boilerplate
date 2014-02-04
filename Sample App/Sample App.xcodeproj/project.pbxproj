@@ -22,6 +22,7 @@
 		3E28FAFE18A14256006E6A40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E28FADD18A14255006E6A40 /* UIKit.framework */; };
 		3E28FB0618A14256006E6A40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E28FB0418A14256006E6A40 /* InfoPlist.strings */; };
 		3E28FB0818A14256006E6A40 /* Sample_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E28FB0718A14256006E6A40 /* Sample_AppTests.m */; };
+		3E28FB1218A144FF006E6A40 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E28FB1118A144FF006E6A40 /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3E28FB0318A14256006E6A40 /* Sample AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sample AppTests-Info.plist"; sourceTree = "<group>"; };
 		3E28FB0518A14256006E6A40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E28FB0718A14256006E6A40 /* Sample_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sample_AppTests.m; sourceTree = "<group>"; };
+		3E28FB1118A144FF006E6A40 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				3E28FAF218A14256006E6A40 /* ViewController.m */,
 				3E28FAF418A14256006E6A40 /* Images.xcassets */,
 				3E28FAE018A14255006E6A40 /* Supporting Files */,
+				3E28FB1118A144FF006E6A40 /* index.html */,
 			);
 			path = "Sample App";
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E28FB1218A144FF006E6A40 /* index.html in Resources */,
 				3E28FAF018A14256006E6A40 /* Main_iPad.storyboard in Resources */,
 				3E28FAF518A14256006E6A40 /* Images.xcassets in Resources */,
 				3E28FAED18A14255006E6A40 /* Main_iPhone.storyboard in Resources */,
