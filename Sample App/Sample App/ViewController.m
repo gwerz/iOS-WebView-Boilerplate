@@ -67,7 +67,7 @@
 
 - (BOOL)iOS7OrHigher {
     float iOSversion = [[[UIDevice currentDevice] systemVersion] floatValue];
-    return iOSversion>=7;
+    return iOSversion >= 7;
 }
 
 @end

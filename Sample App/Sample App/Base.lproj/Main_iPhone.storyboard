@@ -21,22 +21,23 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3M0-Ct-uba">
-                                <rect key="frame" x="142" y="265" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hwf-sE-xIs">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Mgp-Pg-ZdX" secondAttribute="trailing" id="6nP-hc-8Vl"/>
-                            <constraint firstAttribute="bottom" secondItem="Mgp-Pg-ZdX" secondAttribute="bottom" id="Kl9-HC-mqS"/>
-                            <constraint firstItem="Mgp-Pg-ZdX" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="b38-JM-yRn"/>
-                            <constraint firstItem="Mgp-Pg-ZdX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="tDZ-X0-Lg3"/>
+                            <constraint firstItem="Mgp-Pg-ZdX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="1xR-9I-j9R"/>
+                            <constraint firstItem="Mgp-Pg-ZdX" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="2AW-pg-NX8"/>
+                            <constraint firstAttribute="trailing" secondItem="Mgp-Pg-ZdX" secondAttribute="trailing" id="2bE-Y7-qEd"/>
+                            <constraint firstItem="hwf-sE-xIs" firstAttribute="centerX" secondItem="Mgp-Pg-ZdX" secondAttribute="centerX" id="GMD-Bw-P1j"/>
+                            <constraint firstItem="hwf-sE-xIs" firstAttribute="centerY" secondItem="Mgp-Pg-ZdX" secondAttribute="centerY" id="QzL-af-jNj"/>
+                            <constraint firstAttribute="bottom" secondItem="Mgp-Pg-ZdX" secondAttribute="bottom" id="Zay-qf-XAH"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="spinner" destination="3M0-Ct-uba" id="bDi-bP-mhr"/>
+                        <outlet property="spinner" destination="hwf-sE-xIs" id="Or7-Eg-Ubc"/>
                         <outlet property="webView" destination="Mgp-Pg-ZdX" id="WxO-My-QRA"/>
                     </connections>
                 </viewController>
