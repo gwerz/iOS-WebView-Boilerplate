@@ -22,13 +22,20 @@
     [super viewDidLoad];
     
     self.webView.delegate = self;
+    [[self.webView scrollView] setBounces: NO];
+    [self.webView.scrollView setDelaysContentTouches: NO];
     
+    // Load local.
     NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:nil];
     NSString *htmlString = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
     NSURL *Url = [NSURL fileURLWithPath:htmlPath];
-    
-    [[self.webView scrollView] setBounces: NO];
     [self.webView loadHTMLString:htmlString baseURL:Url];
+    
+    // Load remote.
+	//NSString *fullURL = @"http://remote.com/index.html";
+    //NSURL *url = [NSURL URLWithString:fullURL];
+    //NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    //[self.webView loadRequest:requestObj];
     
     [spinner startAnimating];
 }
@@ -54,15 +61,21 @@
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    static NSString *regexp = @"^(([a-zA-Z]|[a-zA-Z][a-zA-Z0-9-]*[a-zA-Z0-9])[.])+([A-Za-z]|[A-Za-z][A-Za-z0-9-]*[A-Za-z0-9])$";
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regexp];
     
-    if ([predicate evaluateWithObject:request.URL.host]) {
-        [[UIApplication sharedApplication] openURL:request.URL];
-        return NO;
-    } else {
-        return YES;
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        static NSString *regexp = @"^(([a-zA-Z]|[a-zA-Z][a-zA-Z0-9-]*[a-zA-Z0-9])[.])+([A-Za-z]|[A-Za-z][A-Za-z0-9-]*[A-Za-z0-9])$";
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regexp];
+        
+        if ([predicate evaluateWithObject:request.URL.host]) {
+            [[UIApplication sharedApplication] openURL:request.URL];
+            
+            return NO;
+        } else {
+            return YES;
+        }
     }
+    
+    return YES;
 }
 
 - (BOOL)iOS7OrHigher {
